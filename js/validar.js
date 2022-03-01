@@ -93,8 +93,17 @@ function validar(){
     var phoneNumberValida = phoneNumber.replace(/ /g, '')
     if (phoneNumberValida == ""){
         alert("O campo celular não pode estar vazio");
-        formCadastro.name.focus();
+        formCadastro.phoneNumber.focus();
         return false;
     }
 
+    //------------------
+    // validando E-mail
+    //------------------
+    const regexEmail = /\S+@\S+\.\S+/;
+    if (regexEmail.test(email) == false){
+        alert("E-mail é invalido");
+        formCadastro.email.focus();
+        return false;
+    }
 }
