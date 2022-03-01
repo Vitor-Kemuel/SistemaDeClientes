@@ -54,34 +54,47 @@ function validar(){
     //tirando espaços da string, para caso o usuário tenha digitado apenas espaço
     var nameValida = name.replace(/ /g, '')
     if (nameValida == ""){
-        alert("Nome não pode estar vazio");
+        alert("O campo nome não pode estar vazio");
         formCadastro.name.focus();
         return false;
     }
     
     //verificando se existe caracteres especiais
     
-    const caracteresEspecias = /\W|_/;
-    if (caracteresEspecias.test(name)){
+    const regexName = /\W|_/;
+    if (regexName.test(name)){
         alert("Nome não pode conter caracteres especiais");
         formCadastro.name.focus();
         return false;
     }
 
 
-    //verificando se o nome está vázio
+    //------------------
+    // validando DN
+    //------------------
     if (birthDate == ""){
         alert("É necessario digitar a data de nascimento completa \nEx. 10/05/2002");
         formCadastro.birthDate.focus();
         return false;
     }
     
-    //validando CPF
+    //------------------
+    // validando CPF
+    //------------------
     if(validarCPF(cpf) == false){
         alert("CPF informado é invalido")
         formCadastro.cpf.focus();
         return false;
     }
 
-    
+    //------------------
+    // validando numero de telefone
+    //------------------
+    var phoneNumberValida = phoneNumber.replace(/ /g, '')
+    if (phoneNumberValida == ""){
+        alert("O campo celular não pode estar vazio");
+        formCadastro.name.focus();
+        return false;
+    }
+
 }
