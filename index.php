@@ -10,13 +10,13 @@
 </head>
 <body>
     <form id="form" name="formCadastro" action="script.php" method="POST">
-        <input type="text" name="name" id="nameInput" class="input">
-        <input type="date" name="birthDate" id="birtInput" class="input">
-        <input type="text" name="cpf" id="cpfInput" class="input">
-        <input type="text" name="phoneNumber" id="phoneInput" class="input">
-        <input type="email" name="email" id="emailInput" class="input">
-        <input type="text" name="address" id="addressInput" class="input">
-        <input type="text" name="comments" id="commentsInput" class="input">
+        <input type="text" name="name" id="nameInput" class="input" placeholder="nome">
+        <input type="date" name="birthDate" id="birtInput" class="input" placeholder="birthDate">
+        <input type="text" name="cpf" id="cpfInput" class="input" placeholder="cpf">
+        <input type="text" name="phoneNumber" id="phoneInput" class="input" placeholder="phoneNumber">
+        <input type="email" name="email" id="emailInput" class="input" placeholder="email">
+        <input type="text" name="address" id="addressInput" class="input" placeholder="address">
+        <input type="text" name="comments" id="commentsInput" class="input" placeholder="comments">
         <button type="submit" onclick="return validar()" class="input">Enviar</button>
     </form>
 </body>
