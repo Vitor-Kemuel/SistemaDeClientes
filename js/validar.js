@@ -106,4 +106,14 @@ function validar(){
         formCadastro.email.focus();
         return false;
     }
+
+    //------------------
+    // validando endereço
+    //------------------
+    var addressValida = address.replace(/ /g, '')
+    if (addressValida == ""){
+        alert("O campo endereço não pode estar vazio");
+        formCadastro.address.focus();
+        return false;
+    }
 }
