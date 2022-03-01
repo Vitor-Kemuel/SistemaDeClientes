@@ -42,26 +42,25 @@ function validar(){
     var phoneNumber = formCadastro.phoneNumber.value;
     var email = formCadastro.email.value;
     var address = formCadastro.address.value;
-    // var comments = formCadastro.comments.value;
-    // alert(birthDate)
+    var comments = formCadastro.comments.value;
+    console.log(comments)
+    console.log(comments.length)
 
     //------------------
     // validando nome
     //------------------
-
-    //verificando se o nome está vázio
-    
     //tirando espaços da string, para caso o usuário tenha digitado apenas espaço
     var nameValida = name.replace(/ /g, '')
+    //verificando se o nome está vázio
     if (nameValida == ""){
         alert("O campo nome não pode estar vazio");
         formCadastro.name.focus();
         return false;
     }
     
-    //verificando se existe caracteres especiais
-    
+    //Criando um regex com caracteres especiais + _
     const regexName = /\W|_/;
+    //verificando se existe caracteres especiais
     if (regexName.test(name)){
         alert("Nome não pode conter caracteres especiais");
         formCadastro.name.focus();
@@ -115,5 +114,14 @@ function validar(){
         alert("O campo endereço não pode estar vazio");
         formCadastro.address.focus();
         return false;
+    }
+
+    //------------------
+    // validando observações
+    //------------------
+    if (comments.length > 299){
+        alert("As observações só podem conter até 300 caracteres");
+        formCadastro.comments.focus();
+        return false;  
     }
 }
