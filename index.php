@@ -16,7 +16,7 @@
         <input type="text" name="phoneNumber" id="phoneInput" class="input" placeholder="phoneNumber">
         <input type="email" name="email" id="emailInput" class="input" placeholder="email">
         <input type="text" name="address" id="addressInput" class="input" placeholder="address">
-        <input type="text" name="comments" id="commentsInput" class="input" placeholder="comments">
+        <textarea name="comments" id="commentsInput" class="input" placeholder="comments" rows="3"></textarea>
         <button type="submit" onclick="return validar()" class="input">Enviar</button>
     </form>
 </body>
