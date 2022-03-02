@@ -9,7 +9,7 @@ class Cliente
         try {
             $this->conexao = new PDO('mysql:host=localhost;dbname=cadastro', 'root', '');
         } catch (Exception $e) {
-            echo $e->getMessage();
+            echo 'Não foi possivel se conectar com o banco de dados';
             die();
         }
     }
@@ -17,7 +17,7 @@ class Cliente
     public function insert(string $name,string $birthDate,string $cpf, string $phoneNumber, string $email, string $adress, string $comments) : int
     {
         $sql = 'insert into cliente(nome, data_de_nascimento, cpf, telefone, email, endereco, observacoes) values(:nome, :data_de_nascimento, :cpf, :telefone, :email, :endereco, :observacoes)';
-        echo $sql;
+        // echo $sql;
 
         $prepare = $this->conexao->prepare($sql);
 
