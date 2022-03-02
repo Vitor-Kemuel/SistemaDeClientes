@@ -9,7 +9,7 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <form id="form" name="formCadastro" action="script.php" method="POST">
+    <form id="formCadastro" name="formCadastro" method="POST">
         <input type="text" name="name" id="nameInput" class="input" placeholder="nome">
         <input type="date" name="birthDate" id="birtInput" class="input" placeholder="birthDate">
         <input type="text" name="cpf" id="cpfInput" class="input" placeholder="cpf">
@@ -17,7 +17,10 @@
         <input type="email" name="email" id="emailInput" class="input" placeholder="email">
         <input type="text" name="address" id="addressInput" class="input" placeholder="address">
         <textarea name="comments" id="commentsInput" class="input" placeholder="comments" rows="3"></textarea>
-        <button type="submit" onclick="return validar()" class="input">Enviar</button>
+        <input type="button" form="formCadastro" value="Cadastrar" id="cadastrar"  class="input">
     </form>
+    <div id="resposta"></div>
+    <script type="text/javascript" src="js/jQuery/jquery.js"></script>
+    <script src="js/ajax.js"></script>
 </body>
 </html>
