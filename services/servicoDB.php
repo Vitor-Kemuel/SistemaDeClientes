@@ -20,7 +20,7 @@ class Cliente
         // echo $sql;
 
         $prepare = $this->conexao->prepare($sql);
-
+        
         $prepare->bindParam(':nome', $name);
         $prepare->bindParam(':data_de_nascimento', $birthDate);
         $prepare->bindParam(':cpf', $cpf);
@@ -28,9 +28,24 @@ class Cliente
         $prepare->bindParam(':email', $email);
         $prepare->bindParam(':endereco', $adress);
         $prepare->bindParam(':observacoes', $comments);
-
+        
         $prepare->execute();
-
+        
         return $prepare->rowCount();
+    }
+    public function read($busca)
+    {
+        $sql = 'select * from cliente where nome like \'%'. $busca .'%\' or email like \'%'. $busca .'%\' LIMIT 10';
+        // echo $sql;
+        
+        $clientes = [];
+
+        foreach ($this->conexao->query($sql) as $key => $value)
+        {
+            array_push($clientes, $value);
+            // echo $value;
+        }
+
+        return $clientes;
     }
 }
