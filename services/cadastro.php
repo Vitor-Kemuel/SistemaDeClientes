@@ -8,7 +8,7 @@ $email = $_POST["email"];
 $address = $_POST["address"];
 $comments = $_POST["comments"];
 
-include "services/servicoDB.php";
+include "servicoDB.php";
 
 $conect = new Cliente();
 $row = $conect->insert(

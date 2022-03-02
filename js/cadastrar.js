@@ -4,7 +4,7 @@ $('#cadastrar').on('click', function(){
         var dados = $('#formCadastro').serialize();
         
         $.ajax({
-            url: 'script.php',
+            url: 'services/cadastro.php',
             type: 'POST',
             data: dados,
             processData: false,
