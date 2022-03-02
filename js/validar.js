@@ -43,8 +43,6 @@ function validar(){
     var email = formCadastro.email.value;
     var address = formCadastro.address.value;
     var comments = formCadastro.comments.value;
-    console.log(comments)
-    console.log(comments.length)
 
     //------------------
     // validando nome
@@ -61,7 +59,7 @@ function validar(){
     //Criando um regex com caracteres especiais + _
     const regexName = /\W|_/;
     //verificando se existe caracteres especiais
-    if (regexName.test(name)){
+    if (regexName.test(nameValida)){
         alert("Nome não pode conter caracteres especiais");
         formCadastro.name.focus();
         return false;
@@ -124,4 +122,6 @@ function validar(){
         formCadastro.comments.focus();
         return false;  
     }
+
+    return true;
 }
