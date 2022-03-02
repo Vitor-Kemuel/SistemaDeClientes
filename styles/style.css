@@ -3,7 +3,7 @@
     margin: 0;
 }
 
-#form{
+#formCadastro{
     display: flex;
     flex-direction: column;
     padding: 10px;
