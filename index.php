@@ -21,6 +21,6 @@
     </form>
     <div id="resposta"></div>
     <script type="text/javascript" src="js/jQuery/jquery.js"></script>
-    <script src="js/ajax.js"></script>
+    <script src="js/cadastrar.js"></script>
 </body>
 </html>
