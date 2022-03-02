@@ -33,6 +33,7 @@ class Cliente
         
         return $prepare->rowCount();
     }
+
     public function read($busca)
     {
         $sql = 'select * from cliente where nome like \'%'. $busca .'%\' or email like \'%'. $busca .'%\' LIMIT 10';
@@ -48,4 +49,12 @@ class Cliente
 
         return $clientes;
     }
+
+    public function readSimple(string $id)
+    {
+        $sql = 'select * from cliente where id=' . $id;
+
+        return $this->conexao->query($sql);
+    }
+
 }
