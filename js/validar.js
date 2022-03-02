@@ -58,6 +58,13 @@ function validar(){
     
     //Criando um regex com caracteres especiais + _
     const regexName = /\W|_/;
+    //removendo acentos do nome
+    nameValida = nameValida.replace(/[áàãâäÁÀÃÂÄ]/g, 'a');
+    nameValida = nameValida.replace(/[éèêëÉÈÊË]/g, 'e');
+    nameValida = nameValida.replace(/[íìîïÍÌÎÏ]/g, 'i');
+    nameValida = nameValida.replace(/[óòõôöÓÒÕÔÖ]/g, 'o');
+    nameValida = nameValida.replace(/[úùûüÚÙÛÜ]/g, 'u');
+    nameValida = nameValida.replace(/[çÇ]/g, 'c');
     //verificando se existe caracteres especiais
     if (regexName.test(nameValida)){
         alert("Nome não pode conter caracteres especiais");
@@ -123,5 +130,8 @@ function validar(){
         return false;  
     }
 
+    //------------------
+    // Retornando valor para caso os dados estejam certos
+    //------------------
     return true;
 }
