@@ -1,4 +1,5 @@
 <?php
+
 $name = $_POST["name"];
 $birthDate = $_POST["birthDate"];
 $cpf = $_POST["cpf"];
@@ -10,7 +11,7 @@ $comments = $_POST["comments"];
 include "services/servicoDB.php";
 
 $conect = new Cliente();
-$conect->insert(
+$row = $conect->insert(
     $name,
     $birthDate,
     $cpf,
@@ -20,5 +21,10 @@ $conect->insert(
     $comments,
 );
 
-header("location: index.php");
+if($row >= 1 ){
+    echo "Cadastrado com sucesso";
+}
+else{
+    echo 'Ocorreu algum erro ao cadastrar';
+}
 ?>
