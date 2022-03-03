@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="styles/lista.css">
         <script type="text/javascript" src="js/jQuery/jquery.js" defer></script>
         <script src="js/lista.js" defer></script>
+        <script src="js/validar.js"></script>
         <title>Document</title>
     </head>
 <body>
@@ -26,12 +27,22 @@
                     Nome
                 </th>
                 <th>
+                    Data de nascimento
+                </th>
+                <th>
+                    Numero de telefone
+                </th>
+                <th>
                     E-mail
+                </th>
+                <th>
+                    Endereço
                 </th>
             </tr>
         </thead>
         <tbody id="lista">
         </tbody>
     </table>
+    <div id="containerUpdate"></div>
 </body>
 </html>
