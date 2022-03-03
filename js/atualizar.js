@@ -22,3 +22,7 @@ $('#atualizar').on('click', function(){
         })
     }
 })
+$('#cancelar').on('click', function(){
+    $("#containerUpdate").html("")
+    $("#buscar").click()
+})
