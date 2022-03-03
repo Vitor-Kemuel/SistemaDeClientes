@@ -35,15 +35,21 @@ function validarCPF(cpf) {
 	return true;   
 }
 
-function validar(){
-    var name = formCadastro.name.value;
-    var birthDate = formCadastro.birthDate.value;
-    var cpf = formCadastro.cpf.value;
-    var phoneNumber = formCadastro.phoneNumber.value;
-    var email = formCadastro.email.value;
-    var address = formCadastro.address.value;
-    var comments = formCadastro.comments.value;
-
+function validar(acao){
+    console.log(acao)
+    if(acao == 'cadastro'){
+        var form = formCadastro;
+    }else if (acao == 'atualizar'){
+        var form = formUpdate;
+    }
+    var name = form.name.value;
+    var birthDate = form.birthDate.value;
+    var cpf = form.cpf.value;
+    var phoneNumber = form.phoneNumber.value;
+    var email = form.email.value;
+    var address = form.address.value;
+    var comments = form.comments.value;
+        
     //------------------
     // validando nome
     //------------------
@@ -52,7 +58,7 @@ function validar(){
     //verificando se o nome está vázio
     if (nameValida == ""){
         alert("O campo nome não pode estar vazio");
-        formCadastro.name.focus();
+        form.name.focus();
         return false;
     }
     
@@ -68,7 +74,7 @@ function validar(){
     //verificando se existe caracteres especiais
     if (regexName.test(nameValida)){
         alert("Nome não pode conter caracteres especiais");
-        formCadastro.name.focus();
+        form.name.focus();
         return false;
     }
 
@@ -78,7 +84,7 @@ function validar(){
     //------------------
     if (birthDate == ""){
         alert("É necessario digitar a data de nascimento completa \nEx. 10/05/2002");
-        formCadastro.birthDate.focus();
+        form.birthDate.focus();
         return false;
     }
     
@@ -87,7 +93,7 @@ function validar(){
     //------------------
     if(validarCPF(cpf) == false){
         alert("CPF informado é invalido")
-        formCadastro.cpf.focus();
+        form.cpf.focus();
         return false;
     }
 
@@ -97,7 +103,7 @@ function validar(){
     var phoneNumberValida = phoneNumber.replace(/ /g, '')
     if (phoneNumberValida == ""){
         alert("O campo celular não pode estar vazio");
-        formCadastro.phoneNumber.focus();
+        form.phoneNumber.focus();
         return false;
     }
 
@@ -107,7 +113,7 @@ function validar(){
     const regexEmail = /\S+@\S+\.\S+/;
     if (regexEmail.test(email) == false){
         alert("E-mail é invalido");
-        formCadastro.email.focus();
+        form.email.focus();
         return false;
     }
 
@@ -117,7 +123,7 @@ function validar(){
     var addressValida = address.replace(/ /g, '')
     if (addressValida == ""){
         alert("O campo endereço não pode estar vazio");
-        formCadastro.address.focus();
+        form.address.focus();
         return false;
     }
 
@@ -126,7 +132,7 @@ function validar(){
     //------------------
     if (comments.length > 299){
         alert("As observações só podem conter até 300 caracteres");
-        formCadastro.comments.focus();
+        form.comments.focus();
         return false;  
     }
 
