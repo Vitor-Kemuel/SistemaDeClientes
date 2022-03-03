@@ -78,7 +78,6 @@ function validar(acao){
         return false;
     }
 
-
     //------------------
     // validando DN
     //------------------

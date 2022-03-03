@@ -1,7 +1,8 @@
+// Criando a ação de click no elemento
 $('#buscar').on('click', function(){
-
+    // recuperando dados do formulario
     var dados = $('#formSearch').serialize();
-
+    // enviando dados para o servidor
     $.ajax({
         url: 'services/listagem.php',
         type: 'POST',
@@ -12,9 +13,11 @@ $('#buscar').on('click', function(){
             $("#requisicao").html("Buscando");
             $("#lista").html("");
         },
+        // recebendo resposta do servidor
         success: function(resposta){
             $("#requisicao").html("Finalizando");
         },
+        //finalizando - retornando dados
     }).done(function(data){
         let lista = [];
         lista = JSON.parse(data)
@@ -61,7 +64,9 @@ $('#buscar').on('click', function(){
     });
 });
 
+// definindo função para atualizar dados
 function editData(id){
+    // requisição de dados por meio do id
     $.ajax({
         url: 'services/getOne.php',
         type: 'POST',
@@ -71,9 +76,11 @@ function editData(id){
         beforeSend: function(){
             $("#requisicao").html("carregando")
         },
+        // resposta do servidor
         success: function(resposta){
             $("#requisicao").html("")
         },
+        // finalizando - criando formulario para editar
     }).done(function(data){
         console.log(data)
         cliente = JSON.parse(data)
@@ -126,7 +133,9 @@ function editData(id){
     })
 }
 
+// definindo função parar deletar dados
 function deleteData(id){
+    // envio do identificador dos dados
     $.ajax({
         url: 'services/deletar.php',
         type: 'POST',
@@ -136,6 +145,7 @@ function deleteData(id){
         beforeSend: function(){
             $("#requisicao").html("Apagando...")
         },
+        //retorno do servidor
         success: function(resposta){
             $("#requisicao").html(resposta)
             $("#buscar").click()
