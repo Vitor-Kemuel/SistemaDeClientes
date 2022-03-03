@@ -1,6 +1,6 @@
 $('#cadastrar').on('click', function(){
     
-    if(validar()){    
+    if(validar('cadastro')){    
         var dados = $('#formCadastro').serialize();
         
         $.ajax({
