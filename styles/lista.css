@@ -3,6 +3,37 @@
     margin: 0;
 }
 
+#formSearch{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+#textSearch{
+    padding: 5px 10px;
+    width: 300px;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+#buscar{
+    background: rgb(0, 0, 200);
+    padding: 5px 10px;
+    color: aliceblue;
+    font-weight: bold;
+    border: 2px solid rgb(0, 0, 255);
+    border-radius: 10px;
+}
+#table{
+    width: 95%;
+    margin: 10px auto;
+}
+.bnt{
+    margin: 0 5px;
+    padding: 3px;
+    cursor: pointer;
+}
+
 .idCliente{
     display: none;
 }

@@ -1,0 +1,54 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#cabecalho{
+    background: rgb(214, 214, 214);
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    padding: 0 40px;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.6));
+}
+#tituloCabecalho{
+    font-weight: bold;
+    font-size: 50px;
+    color: rgba(0, 0, 255, 0.726);
+}
+#container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+#titulo{
+    font-size: 70px;
+}
+.texto{
+    font-size: 30px;
+}
+#containerAncoras{
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+    align-items: center;
+    height: 100%;
+}
+.ancora{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    padding: 0 20px;
+    height: 100%;
+    color: rgb(36, 36, 36);
+    font-size: 27px;
+}
+.ancora:hover{
+    border-bottom: 3px solid rgba(0, 0, 255, 0.726);
+    height: calc(100% - 3px);
+}

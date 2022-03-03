@@ -11,6 +11,24 @@
     margin: auto;
 }
 .input{
-    margin: 20px 0 0;
+    margin: 0 0 10px;
     padding: 10px;
+    border-radius: 5px;
+}
+#birtInput{
+    padding: 7.5px 10px;
+}
+.lineForm{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 5px;
+}
+#birthDateInputContainer{
+    width: 50%;
 }
