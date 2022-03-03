@@ -49,11 +49,18 @@ class Cliente
         return $clientes;
     }
 
-    public function readSimple(string $id)
+    public function readOne(string $id)
     {
-        $sql = 'select * from cliente where id=' . $id;
+        $sql = 'select * from cliente where id=\'' . $id. '\'';
+        
+        $cliente = [];
 
-        return $this->conexao->query($sql);
+        foreach ($this->conexao->query($sql) as $key => $value)
+        {
+            array_push($cliente, $value);
+        }
+
+        return $cliente;
     }
 
     public function update(string $id, string $name,string $birthDate,string $cpf, string $phoneNumber, string $email, string $adress, string $comments)
