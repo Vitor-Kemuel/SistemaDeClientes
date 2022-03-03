@@ -50,7 +50,7 @@
         </div>
         <div class="lineForm">
             <div class="inputContainer">
-                <label for="commentsInput" class="labelInput">observação:</label>
+                <label for="commentsInput" class="labelInput">Observação:</label>
                 <textarea name="comments" id="commentsInput" class="input" placeholder="Observações" rows="3"></textarea>
             </div>
         </div>
